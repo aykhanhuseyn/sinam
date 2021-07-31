@@ -1,0 +1,13 @@
+@import '../../styles/placeholders';
+
+._row {
+	@extend %row-container;
+	background-color: var(--white);
+	color: var(--black);
+}
+
+._main {
+	min-height: calc(100vh - 140px);
+	background-color: var(--white);
+	color: var(--black);
+}

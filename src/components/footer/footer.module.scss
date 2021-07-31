@@ -1,0 +1,11 @@
+@import '../../styles/placeholders';
+
+._row {
+	@extend %row-container;
+	height: 30px;
+	background-color: var(--orange);
+
+	._copy {
+		color: var(--white);
+	}
+}

@@ -1,0 +1,39 @@
+@import '../../styles/placeholders';
+
+._row {
+	@extend %row-container;
+	height: 70px;
+	background-color: var(--orange);
+
+	._container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		._logo {
+			color: var(--white);
+			width: 50px;
+			height: 50px;
+			object-fit: contain;
+		}
+
+		._user {
+			display: grid;
+			grid-template-columns: auto 50px;
+			justify-content: flex-end;
+			align-items: center;
+			gap: 20px;
+
+			&__name {
+				font-size: 14px;
+				color: var(--white);
+			}
+			&__avatar {
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background-color: var(--space);
+			}
+		}
+	}
+}
