@@ -8,18 +8,18 @@ import {
 	Redirect,
 } from 'react-router-dom';
 
-import Login from './components/login';
 import Layout from './components/layout';
+import Login from './pages/Login';
+import NotFound from './pages/NotFound';
+import QuestionsList from './pages/Questions';
 
 function App() {
-	if (localStorage.getItem('user')) {
+	if (!localStorage.getItem('user')) {
 		return (
 			<Router>
 				<Switch>
+					<Route exact path='/login' component={Login} />
 					<Redirect from='*' to='/login' />
-					<Route path='/login'>
-						<Login />
-					</Route>
 				</Switch>
 			</Router>
 		);
@@ -29,10 +29,17 @@ function App() {
 		<Router>
 			<Layout>
 				<Switch>
-					<Redirect from='*' to='/' />
-					<Route path='/'>
-						<div>home</div>
-					</Route>
+					<Route exact path='/' component={QuestionsList} />
+					<Route
+						exact
+						path='/hello'
+						component={() => (
+							<div>
+								<div>hello</div>
+							</div>
+						)}
+					/>
+					<Route path='*' component={NotFound} />
 				</Switch>
 			</Layout>
 		</Router>

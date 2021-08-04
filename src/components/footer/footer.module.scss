@@ -2,10 +2,12 @@
 
 ._row {
 	@extend %row-container;
-	height: 30px;
+	height: 50px;
 	background-color: var(--orange);
 
 	._copy {
 		color: var(--white);
+		margin: 0;
+		padding: 0;
 	}
 }

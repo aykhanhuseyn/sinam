@@ -1,0 +1,15 @@
+@import '../../styles/placeholders';
+
+._row {
+	@extend %row-container;
+	height: calc(100vh - 140px);
+
+	._container {
+		._illustrate {
+			width: 100%;
+			height: 100%;
+			max-height: calc(100vh - 160px);
+			object-fit: contain;
+		}
+	}
+}

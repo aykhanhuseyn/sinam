@@ -1,0 +1,47 @@
+@import '../../styles/placeholders';
+
+// body {
+// 	background-color: var(--white);
+// }
+
+._row {
+	@extend %row-container;
+	background-color: var(--white);
+	min-height: 100vh;
+
+	._container {
+		display: grid;
+		grid-template-columns: minmax(350px, 1fr) minmax(300px, 600px);
+		gap: 10px;
+
+		@media screen and (max-width: 690px) {
+			grid-template-columns: unset;
+		}
+
+		._illustration {
+			max-height: calc(100vh - 20px);
+			width: 100%;
+
+			@media screen and (max-width: 690px) {
+				display: none;
+			}
+		}
+
+		._formWrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			._form {
+				width: 40%;
+				min-width: 300px;
+				max-width: 600px;
+
+				&__title {
+					font-size: 40px;
+					margin: 0 0 20px;
+				}
+			}
+		}
+	}
+}

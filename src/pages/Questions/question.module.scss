@@ -1,0 +1,7 @@
+@import '../../styles/placeholders';
+
+._row {
+  @extend %row-container;
+
+  ._container {}
+}
