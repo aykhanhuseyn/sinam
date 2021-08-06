@@ -1,7 +1,9 @@
 @import '../../styles/placeholders';
 
 ._row {
-  @extend %row-container;
+	@extend %row-container;
 
-  ._container {}
+	._container {
+		padding: 20px 0;
+	}
 }

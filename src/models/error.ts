@@ -1,5 +1,5 @@
-interface Error {
+interface ErrorModel {
 	error: string;
 }
 
-export default Error;
+export default ErrorModel;

@@ -1,0 +1,37 @@
+._root {
+	padding: 20px;
+	border-radius: 10px;
+	display: grid;
+	grid-template-columns: 1fr 50px;
+	grid-template-rows: 1fr 1fr;
+	gap: 10px;
+
+	._content {
+		font-size: 1.3rem;
+		font-weight: 600;
+		color: var(--black);
+	}
+	._user {
+		font-size: 0.8rem;
+		font-weight: 400;
+		color: var(--navy);
+	}
+	._point {
+		font-size: 2.2rem;
+		font-weight: 600;
+		color: var(--orange);
+		grid-row: 1 / 3;
+	}
+}
+
+._form {
+	min-width: 300px;
+	max-width: 450px;
+	width: 50%;
+	margin: 0 auto 20px;
+
+	._title {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+}

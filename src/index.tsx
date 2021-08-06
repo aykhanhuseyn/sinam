@@ -1,24 +1,29 @@
-import React from 'react';
+import { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { SnackbarProvider } from 'notistack';
+import Slide from '@material-ui/core/Slide';
+import Loading from './components/loading';
 import './styles/index.css';
 
 ReactDOM.render(
-	<SnackbarProvider
-		dense
-		maxSnack={3}
-		domRoot={document.getElementById('notistack')!}
-		anchorOrigin={{
-			vertical: 'top',
-			horizontal: 'left',
-		}}
-	>
-		<App />
-	</SnackbarProvider>,
+	<Suspense fallback={<Loading />}>
+		<SnackbarProvider
+			dense
+			maxSnack={3}
+			domRoot={document.getElementById('notistack')!}
+			anchorOrigin={{
+				vertical: 'top',
+				horizontal: 'left',
+			}}
+			TransitionComponent={() => <Slide direction='down' />}
+		>
+			<App />
+		</SnackbarProvider>
+	</Suspense>,
 	document.getElementById('root')
 );
 
